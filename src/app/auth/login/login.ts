@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {FormsModule} from '@angular/forms';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-login',
@@ -9,11 +10,24 @@ import {FormsModule} from '@angular/forms';
 })
 export class Login {
   email: string = '';
-  password: string = '';
+  motDePasse: string = '';
 
-  login(){
-    console.log("email:", this.email);
-    console.log("password:", this.password);
+  constructor(
+    private authService: AuthService
+  ) {}
+
+
+  login() {
+    this.authService.login({ email: this.email, motDePasse: this.motDePasse })
+    .subscribe(
+      {
+      next: (response) => {
+        console.log( response);
+      },
+      error: (error) => {
+        console.error( error);
+      }
+    }
+  );
   }
-  
 }
