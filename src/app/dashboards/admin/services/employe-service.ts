@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { environment } from '../../../../environments/environment';
 import { HttpClient } from '@angular/common/http';
-import { ApiResponse, Employe } from '../models/employe.model';
+import { ApiResponse, Employe } from '../models/employe/employe.model';
 import { map, Observable } from 'rxjs';
 
 @Injectable({
@@ -13,9 +13,6 @@ export class EmployeService {
   constructor(private http: HttpClient) {}
 
   getAllEmployes(): Observable<ApiResponse> {
-    return this.http.get<ApiResponse>(this.baseUrl)
+    return this.http.get<ApiResponse>(this.baseUrl);
   }
-
-
 }
-  

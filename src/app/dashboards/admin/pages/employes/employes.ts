@@ -1,6 +1,6 @@
 import { ChangeDetectorRef, Component, OnInit, signal } from '@angular/core';
 import { EmployeService } from '../../services/employe-service';
-import { Employe } from '../../models/employe.model';
+import { Employe } from '../../models/employe/employe.model';
 import { CommonModule } from '@angular/common';
 
 @Component({
