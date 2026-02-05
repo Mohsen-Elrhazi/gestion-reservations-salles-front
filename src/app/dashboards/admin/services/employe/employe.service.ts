@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Employe } from '../../models/employe/employe.model';
 import { Observable } from 'rxjs';
 import { ApiResponse } from '../../models/shared/api-response.model';
+import { CreateEmployeRequest } from '../../models/employe/create-employe-request.model';
 
 @Injectable({
   providedIn: 'root',
@@ -15,6 +16,10 @@ export class EmployeService {
 
   getAllEmployes(): Observable<ApiResponse<Employe[]>> {
     return this.http.get<ApiResponse<Employe[]>>(this.baseUrl);
+  }
+
+  createEmploye(newEmploye: CreateEmployeRequest): Observable<ApiResponse<Employe>> {
+    return this.http.post<ApiResponse<Employe>>(this.baseUrl,newEmploye);
   }
   
 }
