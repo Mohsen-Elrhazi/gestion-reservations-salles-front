@@ -1,4 +1,67 @@
-<p>employe works!</p>
+<!-- modal createnew employe -->
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Launch demo modal
+</button>
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body">
+        <form (ngSubmit)="createEmploye()">
+          <div class="mb-3">
+            <label for="exampleInputNom" class="form-label">Nom</label>
+            <input
+              type="text"
+              [(ngModel)]="newEmploye.nom"
+              name="nom"
+              class="form-control"
+              id="exampleInputNom"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email </label>
+            <input
+              type="email"
+              [(ngModel)]="newEmploye.email"
+              name="email"
+              class="form-control"
+              id="exampleInputEmail1"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Mot de passe</label>
+            <input
+              type="password"
+              [(ngModel)]="newEmploye.motDePasse"
+              name="motDePasse"
+              class="form-control"
+              id="exampleInputPassword1"
+            />
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="btnCloseModal">Close</button>
+            <button type="submit" class="btn btn-primary">Add</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- fin modal createnew employe -->
 <table class="table">
   <thead>
     <tr>
@@ -20,14 +83,14 @@
         <td>{{ employe.role }}</td>
         <td>
           <!-- @if(employe.actif){ -->
-            <!-- <button type="button" (click)="toggleStatus(employe.id)" class="btn btn-success me-4">Desactiver</button> -->
+          <!-- <button type="button" (click)="toggleStatus(employe.id)" class="btn btn-success me-4">Desactiver</button> -->
           <!-- }@else { -->
-            <!-- <button type="button" (click)="toggleStatus(employe.id)" class="btn btn-warning me-4">Activer</button> -->
+          <!-- <button type="button" (click)="toggleStatus(employe.id)" class="btn btn-warning me-4">Activer</button> -->
           <!-- } -->
           <button type="button" class="btn btn-primary">Edit</button>
         </td>
       </tr>
-    }@empty {
+    } @empty {
       <tr>
         <td colspan="6" class="text-center">Aucun employé trouvé.</td>
       </tr>
