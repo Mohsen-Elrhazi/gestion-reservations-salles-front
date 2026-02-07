@@ -13,12 +13,14 @@ export class AuthService {
   constructor(private http: HttpClient) {}
 
   login(request: LoginRequest): Observable<AuthResponse> {
-    return this.http.post<ApiResponse<AuthResponse>>(`${this.baseUrl}/login`, request, { withCredentials: true })
-    .pipe(
-      map((response) => response.data),
-      tap((tokens) => { this.saveTokens(tokens.accessToken, tokens.refreshToken);
-      }),
-    );
+    return this.http
+      .post<ApiResponse<AuthResponse>>(`${this.baseUrl}/login`, request, { withCredentials: true })
+      .pipe(
+        map((response) => response.data),
+        tap((tokens) => {
+          this.saveTokens(tokens.accessToken, tokens.refreshToken);
+        }),
+      );
   }
 
   saveTokens(accessToken: string, refreshToken: string): void {

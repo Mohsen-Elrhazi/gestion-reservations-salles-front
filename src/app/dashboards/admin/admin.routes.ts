@@ -1,12 +1,15 @@
 import { Routes } from '@angular/router';
-import { AdminLayout } from './layouts/admin-layout/admin-layout';
-import { Home } from './pages/home/home';
+import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+import { HomeComponent } from './pages/home/home.component';
 import { EmployeComponent } from './pages/employe/employe.component';
+import { SalleComponent } from './pages/salle/salle.component';
+import { ReservationComponent } from './pages/reservation/reservation.component';
+import { EquipementComponent } from './pages/equipement/equipement.component';
 
 export const adminRoutes: Routes = [
   {
     path: '',
-    component: AdminLayout,
+    component: AdminLayoutComponent,
     children: [
       {
         path: '',
@@ -15,11 +18,23 @@ export const adminRoutes: Routes = [
       },
       {
         path: 'home',
-        component: Home,
+        component: HomeComponent,
       },
       {
         path: 'employes',
         component: EmployeComponent,
+      },
+      {
+        path: 'salles',
+        component: SalleComponent,
+      },
+      {
+        path: 'equipements',
+        component: EquipementComponent,
+      },
+      {
+        path: 'reservations',
+        component: ReservationComponent,
       },
     ],
   },

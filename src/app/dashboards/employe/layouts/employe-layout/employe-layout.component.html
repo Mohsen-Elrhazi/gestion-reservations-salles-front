@@ -1,0 +1,43 @@
+<!-- Sidebar -->
+<div class="sidebar bg-dark shadow-sm">
+  <div class="text-white fs-4 fw-bold px-4 py-3 border-bottom border-secondary">Dashboard</div>
+  <nav class="nav flex-column mt-3">
+    <button class="nav-link text-white px-4 py-2" routerLink="/employe/home">Accueil</button>
+    <button class="nav-link text-white px-4 py-2" routerLink="/employe/reservations">Réservations</button>
+  </nav>
+</div>
+
+<!-- Header -->
+<div
+  class="header bg-white border-bottom shadow-sm d-flex align-items-center justify-content-between px-4"
+>
+  <div class="flex-grow-1" style="max-width: 500px">
+    <input
+      type="text"
+      class="form-control rounded-pill bg-light border-0"
+      placeholder="Rechercher..."
+    />
+  </div>
+  <div class="dropdown">
+    <button
+      class="btn btn-secondary dropdown-toggle"
+      type="button"
+      id="dropdownMenuButton"
+      data-bs-toggle="dropdown"
+      aria-expanded="false"
+    >
+      Menu
+    </button>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+      <li><a class="dropdown-item" href="#">Mon profil</a></li>
+      <li><a class="dropdown-item" href="#">Paramètres</a></li>
+      <li><hr class="dropdown-divider" /></li>
+      <li><a class="dropdown-item" href="#">Déconnexion</a></li>
+    </ul>
+  </div>
+</div>
+
+<!-- Main Content -->
+<div class="main-content bg-light p-4">
+  <router-outlet></router-outlet>
+</div>
